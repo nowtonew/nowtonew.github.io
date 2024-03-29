@@ -69,6 +69,37 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-github配置SSH实现免密登陆" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" class="article-date">
+  <time class="dt-published" datetime="2024-03-29T13:29:55.096Z" itemprop="datePublished">2024-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Git配置SSH免密登陆"><a href="#Git配置SSH免密登陆" class="headerlink" title="Git配置SSH免密登陆"></a>Git配置SSH免密登陆</h1><p>跟着官网文档操作的：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh">https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh</a></p>
+<h3 id="1-第一步-设置全局用户名和邮箱"><a href="#1-第一步-设置全局用户名和邮箱" class="headerlink" title="1.第一步-设置全局用户名和邮箱"></a>1.第一步-设置全局用户名和邮箱</h3><p>用户名：git config –global user.name “neme”<br>邮箱：git config –global user.email “email”<br>设置后查看是否设置成功：<br>git config –global user.name<br>git config –global user.email</p>
+<h3 id="2-第二步-生成密钥"><a href="#2-第二步-生成密钥" class="headerlink" title="2.第二步-生成密钥"></a>2.第二步-生成密钥</h3><p>首先进入用户主目录：cd ~<br>配置免密登陆命令：ssh-keygen -t rsa -C “email”<br>按三次回车，会显示密钥自动保存到默认位置<br>按照官方文档中的指引在ssh-agent中添加生成的新的ssh密钥（详细步骤看官方文档，这一步不是必须的）<br>进入公钥文件：cd ~&#x2F;.ssh&#x2F;id_rsa.pub<br>复制文件里的所有内容（即公钥）<br>进入github—&gt;setting—&gt;ssh and gpg keys，选择new ssh keys，将公钥复制上去<br>测试ssh连接：ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a><br>输入yes，如果返回信息中出现了正确的用户名，说明连接没有问题</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" data-id="clucrljq7000073xvakwe92rk" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-使用hexo搭建个人博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/29/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
@@ -93,8 +124,8 @@
       
         <h3 id="1-第一步—安装Node-js"><a href="#1-第一步—安装Node-js" class="headerlink" title="1. 第一步—安装Node.js"></a>1. 第一步—安装Node.js</h3><p>因为我们使用的博客框架hexo是基于node.js生成的，是需要node.js支持的，所以我们要先配置node.js环境</p>
 <p>【Node.js是一个基于Google的V8JavaScript引擎的<strong>开源服务器环境</strong>，用于开发服务器端和网络应用程序。Node.js允许使用JavaScript进行服务器端编程，使得开发者能够用同一种语言构建前后端应用，减少了学习成本和代码重复性。Node.js的特点包括事件驱动和非阻塞I&#x2F;O模型，能够处理大量并发连接，适合构建实时应用和高吞吐量的网络服务。Node.js提供了丰富的模块库，简化了Web应用程序的开发，且其高性能、高并发处理能力使其成为现代网络应用开发的重要工具之一。】</p>
-<p>安装好后它会自动安装两个软件到电脑里，一个是node js，一个是npm</p>
-<p>【npm是Node Package Manager的缩写，即Node包管理器，是Node.js的一个包管理和分发工具。npm是Node.js平台的默认包管理工具，也是世界上最大的软件注册表，包含超过600000个包的结构，允许用户轻松跟踪依赖项和版本。NPM是一个开放源代码的命令行工具，用于安装、更新和管理Node.js模块。它允许用户从一个集中的仓库中下载和安装公共的Node.js模块。NPM随Node.js一起安装，解决了Node.js代码部署中的许多问题，如包的管理（包括安装、卸载、更新、查看、搜索、发布等），并详细记录了每个包的信息，包括作者、版本、依赖、授权信息等，从而将开发者从繁琐的包管理工作（如版本、依赖等）中解放出来，更加专注于功能的开发。】</p>
+<p>安装好后它会自动安装两个软件到电脑里，一个是node.js，一个是npm</p>
+<p>【npm是Node Package Manager的缩写，即Node包管理器，是Node.js的一个包管理和分发工具。npm是Node.js平台的默认包管理工具，也是世界上最大的软件注册表，包含超过600000个包的结构，允许用户轻松跟踪依赖项和版本。npm是一个开放源代码的命令行工具，用于安装、更新和管理Node.js模块。它允许用户从一个集中的仓库中下载和安装公共的Node.js模块。npm随Node.js一起安装，解决了Node.js代码部署中的许多问题，如包的管理（包括安装、卸载、更新、查看、搜索、发布等），并详细记录了每个包的信息，包括作者、版本、依赖、授权信息等，从而将开发者从繁琐的包管理工作（如版本、依赖等）中解放出来，更加专注于功能的开发。】</p>
 <p>我们进入命令行查看安装的node和npm的版本</p>
 <p>打开终端命令：cmd + space 唤起搜索框，然后输入 terminal</p>
 <p>进入root模式：sudo su</p>
@@ -113,6 +144,7 @@
 <p>在本地访问这个项目：在浏览器网址栏输入localhost:4000</p>
 <p>断开服务（停止项目）：ctrl + c</p>
 <p>新建一篇文章：hexo n “blog name”（完整命令是：hexo new “blog name”）</p>
+<h3 id="4-第四步-将博客部署到github"><a href="#4-第四步-将博客部署到github" class="headerlink" title="4.第四步-将博客部署到github"></a>4.第四步-将博客部署到github</h3><p>登陆github，新建一个仓库（repository）<br>完成后打开终端，进入blog文件目录下，下载一个git插件：npm install –save hexo-deployer-git<br>在blog文件中有一个_config.yml文件，存放了hexo的相关设置，用vim模式打开它：vim _config.yml<br>按下 i 进入insert模式，找到文件底部deploy模块，设置如下：<br>deploy:<br>  type: git<br>  repo: 复制粘贴新建的git仓库的URL<br>  branch: master<br>然后按esc键，再输入 :wq 保存并退出<br>部署hexo到github上：hexo d<br>会提示输入github的用户名和密码，用户名正常输入，密码输入你在github上创建的个人token（因为github为了安全现在不支持直接用用户名密码进行api远程登录）<br>部署成功后在仓库中可以看到最新的博客代码<br>进入github—&gt;settings—&gt;pages，source选择deploy from a branch，branch选择master，点击save，这样存放在仓库中的代码才会在github上构建并部署<br>最后在浏览器中输入仓库名就可以直接访问到博客页面了</p>
 
       
     </div>
@@ -209,6 +241,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2024/03/29/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用hexo搭建个人博客</a>
