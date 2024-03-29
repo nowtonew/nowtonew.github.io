@@ -79,16 +79,38 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/">Git配置SSH免密登陆</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Git配置SSH免密登陆"><a href="#Git配置SSH免密登陆" class="headerlink" title="Git配置SSH免密登陆"></a>Git配置SSH免密登陆</h1><p>跟着官网文档操作的：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh">https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh</a></p>
-<h3 id="1-第一步-设置全局用户名和邮箱"><a href="#1-第一步-设置全局用户名和邮箱" class="headerlink" title="1.第一步-设置全局用户名和邮箱"></a>1.第一步-设置全局用户名和邮箱</h3><p>用户名：git config –global user.name “neme”<br>邮箱：git config –global user.email “email”<br>设置后查看是否设置成功：<br>git config –global user.name<br>git config –global user.email</p>
-<h3 id="2-第二步-生成密钥"><a href="#2-第二步-生成密钥" class="headerlink" title="2.第二步-生成密钥"></a>2.第二步-生成密钥</h3><p>首先进入用户主目录：cd ~<br>配置免密登陆命令：ssh-keygen -t rsa -C “email”<br>按三次回车，会显示密钥自动保存到默认位置<br>按照官方文档中的指引在ssh-agent中添加生成的新的ssh密钥（详细步骤看官方文档，这一步不是必须的）<br>进入公钥文件：cd ~&#x2F;.ssh&#x2F;id_rsa.pub<br>复制文件里的所有内容（即公钥）<br>进入github—&gt;setting—&gt;ssh and gpg keys，选择new ssh keys，将公钥复制上去<br>测试ssh连接：ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a><br>输入yes，如果返回信息中出现了正确的用户名，说明连接没有问题</p>
+        <p>跟着官网文档操作的：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh">https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh</a></p>
+<h3 id="1-第一步-设置全局用户名和邮箱"><a href="#1-第一步-设置全局用户名和邮箱" class="headerlink" title="1.第一步-设置全局用户名和邮箱"></a>1.第一步-设置全局用户名和邮箱</h3><p>用户名：git config –global user.name “neme”</p>
+<p>邮箱：git config –global user.email “email”</p>
+<p>设置后查看是否设置成功：</p>
+<p>git config –global user.name</p>
+<p>git config –global user.email</p>
+<h3 id="2-第二步-生成密钥"><a href="#2-第二步-生成密钥" class="headerlink" title="2.第二步-生成密钥"></a>2.第二步-生成密钥</h3><p>首先进入用户主目录：cd ~</p>
+<p>配置免密登陆命令：ssh-keygen -t rsa -C “email”</p>
+<p>按三次回车，会显示密钥自动保存到默认位置</p>
+<p>按照官方文档中的指引在ssh-agent中添加生成的新的ssh密钥（详细步骤看官方文档，这一步不是必须的）</p>
+<p>进入公钥文件：cd ~&#x2F;.ssh&#x2F;id_rsa.pub</p>
+<p>复制文件里的所有内容（即公钥）</p>
+<p>进入github—&gt;setting—&gt;ssh and gpg keys，选择new ssh keys，将公钥复制上去</p>
+<p>测试ssh连接：ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>输入yes，如果返回信息中出现了正确的用户名，说明连接没有问题</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" data-id="clucrljq7000073xvakwe92rk" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" data-id="clucrljq7000073xvakwe92rk" data-title="Git配置SSH免密登陆" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -144,7 +166,17 @@
 <p>在本地访问这个项目：在浏览器网址栏输入localhost:4000</p>
 <p>断开服务（停止项目）：ctrl + c</p>
 <p>新建一篇文章：hexo n “blog name”（完整命令是：hexo new “blog name”）</p>
-<h3 id="4-第四步-将博客部署到github"><a href="#4-第四步-将博客部署到github" class="headerlink" title="4.第四步-将博客部署到github"></a>4.第四步-将博客部署到github</h3><p>登陆github，新建一个仓库（repository）<br>完成后打开终端，进入blog文件目录下，下载一个git插件：npm install –save hexo-deployer-git<br>在blog文件中有一个_config.yml文件，存放了hexo的相关设置，用vim模式打开它：vim _config.yml<br>按下 i 进入insert模式，找到文件底部deploy模块，设置如下：<br>deploy:<br>  type: git<br>  repo: 复制粘贴新建的git仓库的URL<br>  branch: master<br>然后按esc键，再输入 :wq 保存并退出<br>部署hexo到github上：hexo d<br>会提示输入github的用户名和密码，用户名正常输入，密码输入你在github上创建的个人token（因为github为了安全现在不支持直接用用户名密码进行api远程登录）<br>部署成功后在仓库中可以看到最新的博客代码<br>进入github—&gt;settings—&gt;pages，source选择deploy from a branch，branch选择master，点击save，这样存放在仓库中的代码才会在github上构建并部署<br>最后在浏览器中输入仓库名就可以直接访问到博客页面了</p>
+<h3 id="4-第四步-将博客部署到github"><a href="#4-第四步-将博客部署到github" class="headerlink" title="4.第四步-将博客部署到github"></a>4.第四步-将博客部署到github</h3><p>登陆github，新建一个仓库（repository）</p>
+<p>完成后打开终端，进入blog文件目录下，下载一个git插件：npm install –save hexo-deployer-git</p>
+<p>在blog文件中有一个_config.yml文件，存放了hexo的相关设置，用vim模式打开它：vim _config.yml</p>
+<p>按下 i 进入insert模式，找到文件底部deploy模块，设置如下：</p>
+<p>deploy:<br>  type: git<br>  repo: 复制粘贴新建的git仓库的URL<br>  branch: master</p>
+<p>然后按esc键，再输入 :wq 保存并退出</p>
+<p>部署hexo到github上：hexo d</p>
+<p>会提示输入github的用户名和密码，用户名正常输入，密码输入你在github上创建的个人token（因为github为了安全现在不支持直接用用户名密码进行api远程登录）</p>
+<p>部署成功后在仓库中可以看到最新的博客代码</p>
+<p>进入github—&gt;settings—&gt;pages，source选择deploy from a branch，branch选择master，点击save，这样存放在仓库中的代码才会在github上构建并部署</p>
+<p>最后在浏览器中输入仓库名就可以直接访问到博客页面了</p>
 
       
     </div>
@@ -243,7 +275,7 @@
       <ul>
         
           <li>
-            <a href="/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/">(no title)</a>
+            <a href="/2024/03/29/github%E9%85%8D%E7%BD%AESSH%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/">Git配置SSH免密登陆</a>
           </li>
         
           <li>
