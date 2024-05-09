@@ -166,6 +166,7 @@
 <p>在本地访问这个项目：在浏览器网址栏输入localhost:4000</p>
 <p>断开服务（停止项目）：ctrl + c</p>
 <p>新建一篇文章：hexo n “blog name”（完整命令是：hexo new “blog name”）</p>
+<p>在本地更新博客文章内容后，都需要进行更新操作，类似git中add + commit的操作：hexo g (hexo generate)</p>
 <h3 id="4-第四步-将博客部署到github"><a href="#4-第四步-将博客部署到github" class="headerlink" title="4.第四步-将博客部署到github"></a>4.第四步-将博客部署到github</h3><p>登陆github，新建一个仓库（repository）</p>
 <p>完成后打开终端，进入blog文件目录下，下载一个git插件：npm install –save hexo-deployer-git</p>
 <p>在blog文件中有一个_config.yml文件，存放了hexo的相关设置，用vim模式打开它：vim _config.yml</p>
@@ -179,6 +180,7 @@
 <p>最后在浏览器中输入仓库名就可以直接访问到博客页面了</p>
 <h3 id="5-关于博客文章的编写"><a href="#5-关于博客文章的编写" class="headerlink" title="5.关于博客文章的编写"></a>5.关于博客文章的编写</h3><p>Mac环境下可以直接使用Xcode编写，Xcode已经集成MarkDown编辑器，Ctrl N新建一个文件，选择Markdown格式即可</p>
 <p>编写完成后保存到博客文件所在系统目录，按照上面的更新部署操作推送到远程仓库即可</p>
+<p>注意更新部署操作前先进入sudo模式，不然会出现权限报错</p>
 
       
     </div>
